@@ -49,7 +49,7 @@ public class UserManager {
     }
 
     public String printUser(User user) {
-        return this.users.get(user.getCredential().getLogin()).toString();
+        return this.users.get(user.getCredential().getLogin()).toBeautyString();
     }
 
     public String printAllUsers() {
@@ -72,7 +72,7 @@ public class UserManager {
     }
 
     public User searchUser() {
-        var login = UserDataForm.askLogin(new ConsoleInput());
+        var login = UserDataForm.askLogin();
         return this.getUserByLogin(login);
     }
 
@@ -86,7 +86,7 @@ public class UserManager {
     }
 
     public User boostUser() throws NoSuchUserException {
-        String login = UserDataForm.askLogin(new ConsoleInput());
+        String login = UserDataForm.askLogin();
         User user = this.containsUserByLogin(login);
         user.setRole(Role.ADMIN);
         return user;

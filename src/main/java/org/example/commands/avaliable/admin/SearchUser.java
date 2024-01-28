@@ -6,13 +6,14 @@ import org.example.dto.Request;
 import org.example.dto.Response;
 import org.example.exceptions.NoSuchUserException;
 import org.example.managers.UserManager;
+import org.example.model.data.Role;
 
 public class SearchUser extends Command {
 
     private UserManager userManager;
 
     public SearchUser(UserManager userManager) {
-        super("search_user", "просмотр информации о конкретном пользователе");
+        super(Role.ADMIN, "search_user", "просмотр информации о конкретном пользователе");
         this.userManager = userManager;
     }
 

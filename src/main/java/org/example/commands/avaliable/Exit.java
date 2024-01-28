@@ -4,11 +4,12 @@ import org.example.commands.abstracts.Command;
 import org.example.commands.abstracts.Status;
 import org.example.dto.Request;
 import org.example.dto.Response;
+import org.example.model.data.Role;
 
 public class Exit extends Command {
 
     public Exit() {
-        super("exit", "выход из аккаунта");
+        super(Role.ALL,"exit", "выход из аккаунта");
     }
 
     @Override

@@ -3,6 +3,7 @@ package org.example.controllers;
 import lombok.AllArgsConstructor;
 import org.example.exceptions.ExitObligedException;
 import org.example.exceptions.NoSuchCommandException;
+import org.example.exceptions.NoSuchRoleException;
 import org.example.model.User;
 import org.example.services.AuthService;
 import org.example.services.RuntimeService;
@@ -17,13 +18,6 @@ public class ApplicationController implements Controller {
     private RuntimeService runtimeService;
 
     public User run(UserInput in) {
-        /*
-         todo
-          - проработать логику контроллера работы(это основной контроллер)
-          - придумать админа и его панель, что происходит, если авторизуется админ
-          - при выходе сделать панель для авторизации
-          - *придумать как красиво оформить консоль*
-         */
         User authUser;
         while (true) {
             while (true) {

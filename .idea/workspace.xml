@@ -4,68 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7d62c40-897c-4e8f-8db3-63d4243a720e" name="Changes" comment="">
+    <list default="true" id="e7d62c40-897c-4e8f-8db3-63d4243a720e" name="Changes" comment="init commit">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/abstracts/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/abstracts/Executable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/abstracts/Status.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/Exit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/Help.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/AddIndication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/BoostUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/InfoAboutUsers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/SearchUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/auth/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/auth/Register.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/AddIndications.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/CheckIndications.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/GetActualIndications.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/History.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/ApplicationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/dto/Request.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/dto/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/EmptyIndicationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/ExitObligedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/IncorrectPasswordFormatException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/InvalidUserCredentialException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/MissPatternException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/NegativeIndicationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/NoSuchCommandException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/NoSuchDateException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/NoSuchUserException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/NullIndicationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/PasswordMissMatchException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/managers/CommandManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/managers/IndicationsManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/managers/UserManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/data/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/data/Credential.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/data/Indication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/data/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/data/SNP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/RuntimeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/runners/AdminModeRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/runners/Runner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/runners/UserModeRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/comparators/UserComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/console/ConsoleColors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/console/Printable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/forms/IndicationForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/forms/UserDataForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/input/ConsoleInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/input/UserInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/logger/Logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/NoSuchRoleException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/runners/InteractiveModeRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/abstracts/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/abstracts/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/Exit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/Help.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/AddIndication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/CreateIndication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/BoostUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/BoostUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/InfoAboutUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/InfoAboutUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/SearchUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/SearchUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/auth/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/auth/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/auth/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/auth/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/AddIndications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/AddIndications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/CheckIndications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/CheckIndications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/GetActualIndications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/GetActualIndications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/managers/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/managers/CommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/managers/IndicationsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/managers/IndicationsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/managers/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/managers/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/data/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/data/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/RuntimeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/RuntimeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/runners/AdminModeRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/runners/AdminModeRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/runners/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/runners/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/runners/UserModeRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/runners/UserModeRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utils/forms/IndicationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/forms/IndicationForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utils/forms/UserDataForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/forms/UserDataForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,8 +79,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="org.example.commands.avaliable.admin" />
       <recent name="org.example.exceptions" />
+      <recent name="org.example.commands.avaliable.admin" />
       <recent name="org.example.model.data" />
       <recent name="org.example.utils.input" />
     </key>
@@ -150,8 +120,16 @@
       <workItem from="1706293248674" duration="8154000" />
       <workItem from="1706310884530" duration="12461000" />
       <workItem from="1706375533559" duration="27794000" />
-      <workItem from="1706406777720" duration="17941000" />
+      <workItem from="1706406777720" duration="23317000" />
     </task>
+    <task id="LOCAL-00001" summary="init commit">
+      <created>1706459243083</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706459243083</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,12 +146,16 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/utils/forms/UserDataForm.java</url>
-          <line>104</line>
+          <line>106</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -252,14 +234,87 @@
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/auth/Login.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="37" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/services/RuntimeService.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/managers/UserManager.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/services/RuntimeService.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/services/runners/InteractiveModeRunner.java</url>
           <line>61</line>
-          <option name="timeStamp" value="38" />
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/services/runners/InteractiveModeRunner.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/services/runners/InteractiveModeRunner.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/services/runners/InteractiveModeRunner.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/services/RuntimeService.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/services/RuntimeService.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/services/RuntimeService.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/services/RuntimeService.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/services/RuntimeService.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/services/RuntimeService.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/services/RuntimeService.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/services/runners/InteractiveModeRunner.java</url>
+          <line>58</line>
+          <properties class="org.example.services.runners.InteractiveModeRunner" method="run">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/services/RuntimeService.java</url>
+          <line>27</line>
+          <properties class="org.example.services.RuntimeService" method="askAdmin">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

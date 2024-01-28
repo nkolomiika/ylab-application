@@ -11,10 +11,11 @@ import java.time.format.DateTimeParseException;
 import java.util.NoSuchElementException;
 
 public class IndicationForm {
-
+    
+    private final static UserInput in = new ConsoleInput();
     private static final Console console = new Console();
 
-    public static long askIndication(UserInput in, String indication) {
+    public static long askIndication(String indication) {
         String indStr;
         long ind;
         while (true) {
@@ -38,7 +39,7 @@ public class IndicationForm {
         return ind;
     }
 
-    public static LocalDate askDate(UserInput in) {
+    public static LocalDate askDate() {
         String date;
         while (true) {
             try {
@@ -52,7 +53,7 @@ public class IndicationForm {
         }
     }
 
-    public static String askIndicationName(UserInput in) {
+    public static String askIndicationName() {
         String name;
         while (true) {
             try {

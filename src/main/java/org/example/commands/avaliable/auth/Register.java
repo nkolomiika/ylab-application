@@ -17,14 +17,13 @@ public class Register extends Command {
     private final UserManager userManager;
 
     public Register(UserManager userManager) {
-        super("register", "регистрация нового пользователя");
+        super(Role.NON_AUTH, "register", "регистрация нового пользователя");
         this.userManager = userManager;
     }
 
     @Override
     public Response execute(Request request) {
-        UserInput in = new ConsoleInput();
-        Credential creds = UserDataForm.buildCredential(in, true);
+        Credential creds = UserDataForm.buildCredential(true);
 
         if (userManager.checkLogin(creds.getLogin()))
             return new Response(
@@ -33,8 +32,8 @@ public class Register extends Command {
 
         User user = new User(
                 creds,
-                UserDataForm.buildSNP(in),
-                UserDataForm.buildAddress(in),
+                UserDataForm.buildSNP(),
+                UserDataForm.buildAddress(),
                 Role.USER
         );
 

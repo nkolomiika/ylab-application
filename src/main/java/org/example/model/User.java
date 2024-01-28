@@ -10,21 +10,23 @@ import org.example.model.data.SNP;
 
 @Data
 @AllArgsConstructor
-@RequiredArgsConstructor
 public class User {
 
     private Credential credential;
     private SNP snp;
     private Address address;
     private Role role;
+    private Role sessionRole;
 
-    public User(Credential credential, Role role) {
+    public User(Credential credential, SNP snp, Address address, Role role) {
         this.credential = credential;
+        this.snp = snp;
+        this.address = address;
         this.role = role;
+        this.sessionRole = role;
     }
 
-    @Override
-    public String toString() {
+    public String toBeautyString() {
         return credential.getLogin() + " -> \n" +
                 "   Фамилия : " + snp.getSurname() +
                 "\n   Имя : " + snp.getName() +

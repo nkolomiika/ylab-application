@@ -50,7 +50,7 @@ public class IndicationsManager {
                 if (!checkDate(user, ind))
                     return false;
             }
-            ind.setIndication(IndicationForm.askIndication(in, entry.getKey()));
+            ind.setIndication(IndicationForm.askIndication(entry.getKey()));
             entry.getValue().addLast(ind);
         }
         return true;
@@ -140,7 +140,7 @@ public class IndicationsManager {
      * @return отформатированную строку с показаниями за конкретный месяц
      */
     public String getIndicationByDate(User user) throws EmptyIndicationException, NoSuchDateException {
-        LocalDate localDate = IndicationForm.askDate(new ConsoleInput());
+        LocalDate localDate = IndicationForm.askDate();
         StringBuilder result = new StringBuilder();
         String tab = "    ";
         var userIndications = this.getUserIndications(user);
@@ -181,7 +181,7 @@ public class IndicationsManager {
     }
 
     public String addIndication(){
-        var nameIndication = IndicationForm.askIndicationName(new ConsoleInput());
+        var nameIndication = IndicationForm.askIndicationName();
         this.types.add(nameIndication);
         this.indications.forEach(((user, userIndications) -> {
             userIndications.put(nameIndication, new LinkedList<>());

@@ -6,13 +6,14 @@ import org.example.dto.Request;
 import org.example.dto.Response;
 import org.example.exceptions.NoSuchUserException;
 import org.example.managers.UserManager;
+import org.example.model.data.Role;
 
 public class BoostUser extends Command {
 
     private UserManager userManager;
 
     public BoostUser(UserManager userManager) {
-        super("boost", "повышает права пользователя до админа");
+        super(Role.ADMIN, "boost", "повышает права пользователя до админа");
         this.userManager = userManager;
     }
 

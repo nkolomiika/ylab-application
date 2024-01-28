@@ -7,6 +7,7 @@ import org.example.dto.Response;
 import org.example.exceptions.EmptyIndicationException;
 import org.example.exceptions.NoSuchDateException;
 import org.example.managers.IndicationsManager;
+import org.example.model.data.Role;
 import org.example.utils.console.Console;
 
 public class CheckIndications extends Command {
@@ -15,7 +16,7 @@ public class CheckIndications extends Command {
     private final Console console = new Console();
 
     public CheckIndications(IndicationsManager indicationsManager) {
-        super("check_indications", "просмотр значений счетчиков за определенный месяц");
+        super(Role.USER,"check_indications", "просмотр значений счетчиков за определенный месяц");
         this.indicationsManager = indicationsManager;
     }
 

@@ -6,13 +6,14 @@ import org.example.dto.Request;
 import org.example.dto.Response;
 import org.example.exceptions.EmptyIndicationException;
 import org.example.managers.IndicationsManager;
+import org.example.model.data.Role;
 
 public class GetActualIndications extends Command {
 
     private IndicationsManager indicationsManager;
 
     public GetActualIndications(IndicationsManager indicationsManager) {
-        super("get_actual_indications", "просмотр актуальных показаний счетчиков");
+        super(Role.USER,"get_actual_indications", "просмотр актуальных показаний счетчиков");
         this.indicationsManager = indicationsManager;
     }
 

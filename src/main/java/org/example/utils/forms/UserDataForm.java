@@ -7,6 +7,7 @@ import org.example.model.data.Address;
 import org.example.model.data.Credential;
 import org.example.model.data.SNP;
 import org.example.utils.console.Console;
+import org.example.utils.input.ConsoleInput;
 import org.example.utils.input.UserInput;
 
 import java.util.NoSuchElementException;
@@ -15,37 +16,38 @@ import java.util.regex.Pattern;
 public class UserDataForm {
 
     private static final Console console = new Console();
+    private static final UserInput in = new ConsoleInput();
     private static final String MAIL_PATTERN = "[\\w]+(@)(gmail.com|mail.ru)";
 
     //----------------------------------------------------------------------------
-    public static Address buildAddress(UserInput in) {
+    public static Address buildAddress() {
         console.printBorder();
         return new Address(
-                askCity(in),
-                askStreet(in),
-                askHouse(in),
-                askFlat(in)
+                askCity(),
+                askStreet(),
+                askHouse(),
+                askFlat()
         );
     }
 
-    public static SNP buildSNP(UserInput in) {
+    public static SNP buildSNP() {
         console.printBorder();
         return new SNP(
-                askSurname(in),
-                askName(in),
-                askPatronymic(in)
+                askSurname(),
+                askName(),
+                askPatronymic()
         );
     }
 
-    public static Credential buildCredential(UserInput in, boolean needTest) {
+    public static Credential buildCredential(boolean needTest) {
         return new Credential(
-                askLogin(in),
-                askPassword(in, needTest)
+                askLogin(),
+                askPassword(needTest)
         );
     }
 
     //----------------------------------------------------------------------------
-    private static String askCity(UserInput in) {
+    private static String askCity() {
         String city;
         while (true) {
             try {
@@ -63,7 +65,7 @@ public class UserDataForm {
         return city;
     }
 
-    private static String askStreet(UserInput in) {
+    private static String askStreet() {
         String street;
         while (true) {
             try {
@@ -81,7 +83,7 @@ public class UserDataForm {
         return street;
     }
 
-    private static int askHouse(UserInput in) {
+    private static int askHouse() {
         String houseStr;
         int house;
         while (true) {
@@ -103,7 +105,7 @@ public class UserDataForm {
         return house;
     }
 
-    private static int askFlat(UserInput in) {
+    private static int askFlat() {
         String flatStr;
         int flat;
         while (true) {
@@ -128,7 +130,7 @@ public class UserDataForm {
     //----------------------------------------------------------------------------
 
 
-    private static String askSurname(UserInput in) {
+    private static String askSurname() {
         String surname;
         while (true) {
             try {
@@ -146,7 +148,7 @@ public class UserDataForm {
         return surname;
     }
 
-    private static String askName(UserInput in) {
+    private static String askName() {
         String name;
         while (true) {
             try {
@@ -164,7 +166,7 @@ public class UserDataForm {
         return name;
     }
 
-    private static String askPatronymic(UserInput in) {
+    private static String askPatronymic() {
         String patronymic;
 
         console.println("Укажите ваше отчество  ");
@@ -175,7 +177,7 @@ public class UserDataForm {
 
     //----------------------------------------------------------------------------
 
-    public static String askLogin(UserInput in) {
+    public static String askLogin() {
 
         Pattern pattern = Pattern.compile(MAIL_PATTERN);
         String login;
@@ -197,7 +199,7 @@ public class UserDataForm {
 
     }
 
-    private static String askPassword(UserInput in, boolean needTest) {
+    private static String askPassword(boolean needTest) {
         String password, passwordTest;
         Pattern pattern = Pattern.compile("[\\d\\^_]");
 

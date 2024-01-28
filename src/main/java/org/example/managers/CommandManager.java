@@ -4,6 +4,7 @@ import org.example.commands.abstracts.Command;
 import org.example.dto.Request;
 import org.example.dto.Response;
 import org.example.exceptions.NoSuchCommandException;
+import org.example.model.data.Role;
 import org.example.utils.console.Console;
 
 import java.util.Collection;
@@ -38,12 +39,27 @@ public class CommandManager {
         throw new NoSuchCommandException();
     }
 
-    public String getAllCommands() {
+    public String getAllCommands(Role role) {
+        StringBuilder sb = new StringBuilder();
+        int i = 1;
+        for (Map.Entry<String, Command> entry : commands.entrySet()) {
+            var commandRole = entry.getValue().getRole();
+            if (commandRole.equals(role) || commandRole.equals(Role.ALL)) {
+                sb.append(i).append(". ").append(entry.getValue().toString()).append("\n");
+                i++;
+            }
+        }
+
+        return sb.reverse().replace(0, 1, "").reverse().toString();
+    }
+
+    public String getStarterCommands() {
         StringBuilder sb = new StringBuilder();
         int i = 1;
         for (Map.Entry<String, Command> entry : commands.entrySet()) {
             sb.append(i).append(". ").append(entry.getValue().toString()).append("\n");
             i++;
+
         }
 
         return sb.reverse().replace(0, 1, "").reverse().toString();

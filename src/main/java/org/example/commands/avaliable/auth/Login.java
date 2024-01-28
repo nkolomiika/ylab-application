@@ -7,24 +7,21 @@ import org.example.dto.Response;
 import org.example.exceptions.NoSuchUserException;
 import org.example.managers.UserManager;
 import org.example.model.User;
+import org.example.model.data.Role;
 import org.example.utils.forms.UserDataForm;
-import org.example.utils.input.ConsoleInput;
-import org.example.utils.input.UserInput;
 
 public class Login extends Command {
-
     private final UserManager userManager;
 
     public Login(UserManager userManager) {
-        super("login", "вход в аккаунт");
+        super(Role.NON_AUTH, "login", "вход в аккаунт");
         this.userManager = userManager;
     }
 
     @Override
-    public Response execute(Request request)  {
-        UserInput in = new ConsoleInput();
+    public Response execute(Request request) {
         try {
-            User user = userManager.containsUser(UserDataForm.buildCredential(in, false));
+            User user = userManager.containsUser(UserDataForm.buildCredential(false));
             return new Response(
                     user,
                     "Вы успешно зашли в аккаунт",

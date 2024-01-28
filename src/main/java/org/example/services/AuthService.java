@@ -38,6 +38,8 @@ public class AuthService {
     public User run(UserInput in) throws NoSuchCommandException {
         Response response;
         console.printBorder();
+        console.println(this.commandManager.executeCommand(new Request("help")).getMessage());
+        console.printBorder();
         while (true) {
             try {
                 String command = in.nextLine().trim().toLowerCase();

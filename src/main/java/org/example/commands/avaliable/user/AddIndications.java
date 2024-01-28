@@ -5,13 +5,14 @@ import org.example.commands.abstracts.Status;
 import org.example.dto.Request;
 import org.example.dto.Response;
 import org.example.managers.IndicationsManager;
+import org.example.model.data.Role;
 
 public class AddIndications extends Command {
 
     private IndicationsManager indicationsManager;
 
     public AddIndications(IndicationsManager indicationsManager) {
-        super("add_indications", "добавление показаний счетчиков");
+        super(Role.USER, "add_indications", "добавление показаний счетчиков");
         this.indicationsManager = indicationsManager;
     }
 
