@@ -14,32 +14,58 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Класс IndicationsManager представляет собой менеджер для работы с показаниями счетчиков.
+ */
 public class IndicationsManager {
+    /** Поле для ввода данных от пользователя */
     private final UserInput in = new ConsoleInput();
 
+    /** Список типов счетчиков */
     private List<String> types = new LinkedList<>() {{
         add("Горячая вода");
         add("Холодная вода");
         add("Счетчик отопления");
     }};
+
+    /** Хранилище показаний счетчиков по пользователям */
     private HashMap<User, HashMap<String, LinkedList<Indication>>> indications = new HashMap<>();
 
+    /**
+     * Получение показаний для конкретного пользователя
+     *
+     * @param user Пользователь
+     * @return Мапа типов показаний для пользователя
+     */
     public HashMap<String, LinkedList<Indication>> getUserIndications(User user) {
-        var indications = this.indications.get(user);
-        if (!this.indications.containsKey(user))
-            indications = this.createIndicationForUser(user);
-
-        return indications;
-    }
-
-    private boolean isEmptyIndications(HashMap<String, LinkedList<Indication>> indication) {
-        boolean flag = true;
-        for (String type : types) {
-            if (!indication.get(type).isEmpty()) flag = false;
+        var userIndications = this.indications.get(user);
+        if (userIndications == null) {
+            userIndications = this.createIndicationForUser(user);
         }
-        return flag;
+        return userIndications;
     }
 
+    /**
+     * Проверка, являются ли показания пустыми
+     *
+     * @param indication Показания
+     * @return true, если показания пусты, иначе - false
+     */
+    private boolean isEmptyIndications(HashMap<String, LinkedList<Indication>> indication) {
+        for (String type : types) {
+            if (!indication.get(type).isEmpty()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Добавление показаний счетчиков для пользователя
+     *
+     * @param user Пользователь
+     * @return true, если показания успешно добавлены, иначе - false
+     */
     public boolean addIndicationsByUser(User user) {
         var userIndication = this.getUserIndications(user);
         boolean isFirstAdd = this.isEmptyIndications(userIndication);
@@ -47,8 +73,9 @@ public class IndicationsManager {
         for (Map.Entry<String, LinkedList<Indication>> entry : userIndication.entrySet()) {
             var ind = new Indication();
             if (!isFirstAdd) {
-                if (!checkDate(user, ind))
+                if (!checkDate(user, ind)) {
                     return false;
+                }
             }
             ind.setIndication(IndicationForm.askIndication(entry.getKey()));
             entry.getValue().addLast(ind);
@@ -70,6 +97,12 @@ public class IndicationsManager {
         return map;
     }*/
 
+    /**
+     * Получение всех дат, когда были записаны показания счетчиков для указанного пользователя.
+     * @param user Пользователь, для которого требуется получить список дат
+     * @return Список всех дат, когда были записаны показания счетчиков
+     * @throws EmptyIndicationException если показания отсутствуют
+     */
     public StringBuilder getAllDatesOfIndicationOfUser(User user) throws EmptyIndicationException {
         var userIndication = this.getUserIndications(user);
         if (this.isEmptyIndications(userIndication)) throw new EmptyIndicationException();
@@ -111,6 +144,12 @@ public class IndicationsManager {
         return userIndications;
     }
 
+    /**
+     * Получение истории показаний для указанного пользователя.
+     * @param user Пользователь, для которого требуется получить историю
+     * @return Форматированную строку с историей показаний за разные даты
+     * @throws EmptyIndicationException если показания отсутствуют
+     */
     public String getHistoryOfUser(User user) throws EmptyIndicationException {
         var dates = this.getAllDatesOfIndicationOfUser(user).toString().split("\\n");
         var sb = new StringBuilder();
@@ -120,6 +159,13 @@ public class IndicationsManager {
         return sb.toString();
     }
 
+    /**
+     * Получение строкового представления последних показаний для указанного пользователя.
+     *
+     * @param user Пользователь
+     * @return Строковое представление последних показаний для пользователя
+     * @throws EmptyIndicationException если показания отсутствуют
+     */
     public String lastIndicationToString(User user) throws EmptyIndicationException {
         StringBuilder result = new StringBuilder();
         String tab = "    ";
@@ -136,8 +182,12 @@ public class IndicationsManager {
     }
 
     /**
-     * @param user авторизированный пользователь
-     * @return отформатированную строку с показаниями за конкретный месяц
+     * Получение строкового представления показаний за конкретную дату для указанного пользователя.
+     *
+     * @param user Пользователь
+     * @return Строковое представление показаний за конкретную дату
+     * @throws EmptyIndicationException если показания отсутствуют
+     * @throws NoSuchDateException если указанная дата отсутствует в записях
      */
     public String getIndicationByDate(User user) throws EmptyIndicationException, NoSuchDateException {
         LocalDate localDate = IndicationForm.askDate();
@@ -180,6 +230,11 @@ public class IndicationsManager {
         return result.toString();
     }
 
+    /**
+     * Добавление нового типа показаний.
+     *
+     * @return Название нового типа показаний
+     */
     public String addIndication(){
         var nameIndication = IndicationForm.askIndicationName();
         this.types.add(nameIndication);

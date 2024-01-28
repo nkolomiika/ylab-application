@@ -4,7 +4,6 @@ import org.example.commands.abstracts.Command;
 import org.example.dto.Request;
 import org.example.dto.Response;
 import org.example.exceptions.NoSuchCommandException;
-import org.example.exceptions.NoSuchUserException;
 import org.example.model.data.Role;
 import org.example.utils.console.Console;
 
@@ -13,15 +12,26 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Менеджер команд отвечает за обработку и выполнение команд пользователей.
+ */
 public class CommandManager {
 
     private HashMap<String, Command> commands;
     private final Console console = new Console();
 
+    /**
+     * Создает новый менеджер команд.
+     */
     public CommandManager() {
         this.commands = new HashMap<>();
     }
 
+    /**
+     * Добавляет все команды в коллекцию.
+     *
+     * @param commands коллекция команд
+     */
     public void addAllCommands(Collection<Command> commands) {
         this.commands.putAll(
                 commands.stream()
@@ -29,10 +39,22 @@ public class CommandManager {
         );
     }
 
+    /**
+     * Добавляет команду в менеджер.
+     *
+     * @param command команда для добавления
+     */
     public void addCommand(Command command) {
         this.commands.put(command.getName(), command);
     }
 
+    /**
+     * Выполняет команду на основе полученного запроса.
+     *
+     * @param request запрос на выполнение команды
+     * @return результат выполнения команды в виде ответа
+     * @throws NoSuchCommandException если команда не существует
+     */
     public Response executeCommand(Request request) {
         String command = request.getCommand();
         if (this.commands.containsKey(command))
@@ -40,6 +62,12 @@ public class CommandManager {
         throw new NoSuchCommandException();
     }
 
+    /**
+     * Получает список всех команд для указанной роли.
+     *
+     * @param role роль пользователя
+     * @return список всех команд для указанной роли
+     */
     public String getAllCommands(Role role) {
         StringBuilder sb = new StringBuilder();
         int i = 1;
@@ -54,6 +82,11 @@ public class CommandManager {
         return sb.reverse().replace(0, 1, "").reverse().toString();
     }
 
+    /**
+     * Получает список всех стартовых команд.
+     *
+     * @return список всех стартовых команд
+     */
     public String getStarterCommands() {
         StringBuilder sb = new StringBuilder();
         int i = 1;
@@ -66,8 +99,13 @@ public class CommandManager {
         return sb.reverse().replace(0, 1, "").reverse().toString();
     }
 
+    /**
+     * Проверяет, содержит ли менеджер указанную команду.
+     *
+     * @param command проверяемая команда
+     * @return true, если менеджер содержит указанную команду, в противном случае - false
+     */
     public boolean containsCommand(String command) {
         return this.commands.containsKey(command);
     }
-
 }

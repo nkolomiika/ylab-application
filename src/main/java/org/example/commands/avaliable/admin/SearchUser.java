@@ -8,15 +8,29 @@ import org.example.exceptions.NoSuchUserException;
 import org.example.managers.UserManager;
 import org.example.model.data.Role;
 
+/**
+ * Класс, представляющий команду для просмотра информации о конкретном пользователе.
+ */
 public class SearchUser extends Command {
 
     private UserManager userManager;
 
+    /**
+     * Конструктор для класса SearchUser.
+     *
+     * @param userManager менеджер пользователей, используемый для поиска информации о пользователе.
+     */
     public SearchUser(UserManager userManager) {
         super(Role.ADMIN, "search_user", "просмотр информации о конкретном пользователе");
         this.userManager = userManager;
     }
 
+    /**
+     * Выполняет запрос просмотра информации о конкретном пользователе.
+     *
+     * @param request входящий запрос, возможно, содержащий дополнительные данные для запроса информации.
+     * @return Ответ, содержащий результат просмотра информации о пользователе и его состояние (статус).
+     */
     @Override
     public Response execute(Request request)  {
         try {

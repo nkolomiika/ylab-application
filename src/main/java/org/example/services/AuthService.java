@@ -20,12 +20,20 @@ import org.example.utils.logger.Logger;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+/**
+ * Сервис аутентификации отвечает за аутентификацию пользователей и выполнение связанных с этим команд.
+ */
 @AllArgsConstructor
 public class AuthService {
 
     private final Console console = new Console();
     private final CommandManager commandManager;
 
+    /**
+     * Создает новый AuthService с соответствующими командами аутентификации.
+     *
+     * @param userManager Менеджер пользователей для проведения аутентификации
+     */
     public AuthService(UserManager userManager) {
         this.commandManager = new CommandManager();
         commandManager.addAllCommands(
@@ -37,6 +45,13 @@ public class AuthService {
         commandManager.addCommand(new Help(this.commandManager));
     }
 
+    /**
+     * Запускает процесс аутентификации с вводом от пользователя.
+     *
+     * @param in Ввод от пользователя
+     * @return Вошедший в систему пользователь
+     * @throws NoSuchCommandException если команда не найдена
+     */
     public User run(UserInput in) throws NoSuchCommandException {
         Response response;
         console.printBorder();
@@ -55,15 +70,19 @@ public class AuthService {
                     if (response.getUser() == null) {
                         console.printBorder();
                         Logger.addLog(
-                                Logger.createLogString(Role.NON_AUTH.toString(), command, response.getStatus())
-                        );
+                                Logger.createLogFormatString(
+                                        Role.NON_AUTH.toString(),
+                                        command,
+                                        response.getStatus()));
                     }
 
                     if (response.getUser() != null) {
                         var user = response.getUser();
                         Logger.addLog(
-                                Logger.createLogString(user.getCredential().getLogin(), command, response.getStatus())
-                        );
+                                Logger.createLogFormatString(
+                                        user.getCredential().getLogin(),
+                                        command,
+                                        response.getStatus()));
                         return user;
                     }
                 }

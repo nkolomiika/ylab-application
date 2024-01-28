@@ -54,6 +54,14 @@ public class InteractiveModeRunner implements Runner {
 
     }
 
+    /**
+     * Запускает интерактивный режим для данного пользователя.
+     *
+     * @param in   Ввод от пользователя
+     * @param user Текущий пользователь
+     * @param role Роль пользователя
+     * @throws ExitObligedException если требуется выход из интерактивного режима
+     */
     @Override
     public void run(UserInput in, User user, Role role) throws ExitObligedException {
         console.printBorder();
@@ -80,7 +88,11 @@ public class InteractiveModeRunner implements Runner {
                     if (status.equals(Status.ERROR)) console.printError(response.getMessage());
                     else console.println(response.getMessage());
 
-                    Logger.addLog(Logger.createLogString(user.getCredential().getLogin(), command, response.getStatus()));
+                    Logger.addLog(
+                            Logger.createLogFormatString(
+                                    user.getCredential().getLogin(),
+                                    command,
+                                    response.getStatus()));
 
                     console.printBorder();
                 }

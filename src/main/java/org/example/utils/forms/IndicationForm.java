@@ -10,11 +10,20 @@ import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.NoSuchElementException;
 
+/**
+ * Предоставляет методы для запроса пользовательских данных о показаниях счетчиков.
+ */
 public class IndicationForm {
     
     private final static UserInput in = new ConsoleInput();
     private static final Console console = new Console();
 
+    /**
+     * Запрашивает у пользователя значение показания счетчика.
+     *
+     * @param indication Тип показания счетчика
+     * @return Значение показания счетчика
+     */
     public static long askIndication(String indication) {
         String indStr;
         long ind;
@@ -39,6 +48,11 @@ public class IndicationForm {
         return ind;
     }
 
+    /**
+     * Запрашивает у пользователя дату.
+     *
+     * @return Дата, указанная пользователем
+     */
     public static LocalDate askDate() {
         String date;
         while (true) {
@@ -53,6 +67,11 @@ public class IndicationForm {
         }
     }
 
+    /**
+     * Запрашивает у пользователя название счетчика.
+     *
+     * @return Название показания счетчика
+     */
     public static String askIndicationName() {
         String name;
         while (true) {

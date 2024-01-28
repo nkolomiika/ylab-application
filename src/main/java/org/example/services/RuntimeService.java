@@ -18,6 +18,14 @@ public class RuntimeService {
     private final Console console = new Console();
     private InteractiveModeRunner runner;
 
+    /**
+     * Запускает выполнение задачи в интерактивном режиме для указанного пользователя.
+     *
+     * @param in   Ввод от пользователя
+     * @param user Текущий пользователь
+     * @throws NoSuchCommandException если команда не найдена
+     * @throws ExitObligedException если требуется выход из интерактивного режима
+     */
     public void run(UserInput in, User user) throws NoSuchCommandException, ExitObligedException {
         if (user.getRole().equals(Role.ADMIN))
             user.setSessionRole(this.askAdmin(in));
@@ -25,13 +33,19 @@ public class RuntimeService {
         this.runner.run(in, user, user.getSessionRole());
     }
 
+    /**
+     * Запрашивает у пользователя статус администратора.
+     *
+     * @param in Ввод от пользователя
+     * @return Статус администратора
+     */
     private Role askAdmin(UserInput in) {
         String command;
         boolean flag = true;
 
         while (true) {
             try {
-                if (flag) console.print(printRoles());
+                if (flag) console.print(Role.printRoles());
                 command = in.nextLine().trim();
                 if (command.equals("")) flag = false;
 
@@ -40,17 +54,5 @@ public class RuntimeService {
                 console.printError("Неизвестная роль");
             }
         }
-    }
-
-    public static String printRoles() {
-        StringBuilder sb = new StringBuilder();
-        int i = 0;
-        for (Role role : Role.values()) {
-            if (role.equals(ALL) || role.equals(NON_AUTH))
-                continue;
-            i++;
-            sb.append(i).append(". ").append(role).append("\n");
-        }
-        return sb.toString();
     }
 }

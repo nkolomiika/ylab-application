@@ -9,18 +9,30 @@ import org.example.model.User;
 import org.example.model.data.Credential;
 import org.example.model.data.Role;
 import org.example.utils.forms.UserDataForm;
-import org.example.utils.input.ConsoleInput;
-import org.example.utils.input.UserInput;
 
+/**
+ * Класс, представляющий команду для регистрации нового пользователя.
+ */
 public class Register extends Command {
 
     private final UserManager userManager;
 
+    /**
+     * Конструктор для класса Register.
+     *
+     * @param userManager менеджер пользователей, используемый для регистрации нового пользователя.
+     */
     public Register(UserManager userManager) {
         super(Role.NON_AUTH, "register", "регистрация нового пользователя");
         this.userManager = userManager;
     }
 
+    /**
+     * Выполняет запрос на регистрацию нового пользователя.
+     *
+     * @param request входящий запрос, возможно, содержащий данные для регистрации нового пользователя.
+     * @return Ответ, содержащий результат операции регистрации и его состояние (статус).
+     */
     @Override
     public Response execute(Request request) {
         Credential creds = UserDataForm.buildCredential(true);

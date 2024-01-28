@@ -2,12 +2,14 @@ package org.example.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import org.example.model.data.Address;
 import org.example.model.data.Credential;
 import org.example.model.data.Role;
 import org.example.model.data.SNP;
 
+/**
+ * Представляет собой модель пользователя в системе.
+ */
 @Data
 @AllArgsConstructor
 public class User {
@@ -26,6 +28,11 @@ public class User {
         this.sessionRole = role;
     }
 
+    /**
+     * Создает строковое представление пользователя для отображения.
+     *
+     * @return Строковое представление данных пользователя
+     */
     public String toBeautyString() {
         return credential.getLogin() + " -> \n" +
                 "   Фамилия : " + snp.getSurname() +

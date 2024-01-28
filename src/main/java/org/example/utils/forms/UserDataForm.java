@@ -20,6 +20,11 @@ public class UserDataForm {
     private static final String MAIL_PATTERN = "[\\w]+(@)(gmail.com|mail.ru)";
 
     //----------------------------------------------------------------------------
+    /**
+     * Создает новый объект типа {@link Address} на основе введенных данных пользователя.
+     *
+     * @return Новый объект Address
+     */
     public static Address buildAddress() {
         console.printBorder();
         return new Address(
@@ -30,6 +35,11 @@ public class UserDataForm {
         );
     }
 
+    /**
+     * Создает новый объект типа {@link SNP} на основе введенных данных пользователя.
+     *
+     * @return Новый объект SNP
+     */
     public static SNP buildSNP() {
         console.printBorder();
         return new SNP(
@@ -39,12 +49,19 @@ public class UserDataForm {
         );
     }
 
+    /**
+     * Создает новый объект типа {@link Credential} на основе введенных данных пользователя.
+     *
+     * @param needTest Флаг, указывающий, нужно ли тестирование пароля
+     * @return Новый объект Credential
+     */
     public static Credential buildCredential(boolean needTest) {
         return new Credential(
                 askLogin(),
                 askPassword(needTest)
         );
     }
+
 
     //----------------------------------------------------------------------------
     private static String askCity() {
@@ -177,6 +194,11 @@ public class UserDataForm {
 
     //----------------------------------------------------------------------------
 
+    /**
+     * Запрашивает у пользователя ввод логина с использованием предварительно установленного шаблона.
+     *
+     * @return Введенный логин
+     */
     public static String askLogin() {
 
         Pattern pattern = Pattern.compile(MAIL_PATTERN);

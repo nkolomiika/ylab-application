@@ -1,9 +1,16 @@
 package org.example.controllers;
 
-import org.example.model.User;
 import org.example.utils.input.UserInput;
 
+/**
+ * Интерфейс контроллера приложения.
+ */
 @FunctionalInterface
 public interface Controller {
-    User run(UserInput in);
+    /**
+     * Запускает контроллер с указанным пользовательским вводом.
+     *
+     * @param in пользовательский ввод
+     */
+    void run(UserInput in);
 }

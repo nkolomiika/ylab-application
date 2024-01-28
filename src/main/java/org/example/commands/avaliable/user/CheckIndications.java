@@ -10,16 +10,30 @@ import org.example.managers.IndicationsManager;
 import org.example.model.data.Role;
 import org.example.utils.console.Console;
 
+/**
+ * Класс, представляющий команду для просмотра значений счетчиков за определенный месяц.
+ */
 public class CheckIndications extends Command {
 
     private IndicationsManager indicationsManager;
-    private final Console console = new Console();
+    private final Console console = new Console();  // Инициализация консольного вывода
 
+    /**
+     * Конструктор для класса CheckIndications.
+     *
+     * @param indicationsManager менеджер показаний, используемый для просмотра значений счетчиков.
+     */
     public CheckIndications(IndicationsManager indicationsManager) {
-        super(Role.USER,"check_indications", "просмотр значений счетчиков за определенный месяц");
+        super(Role.USER, "check_indications", "просмотр значений счетчиков за определенный месяц");
         this.indicationsManager = indicationsManager;
     }
 
+    /**
+     * Выполняет запрос на просмотр значений счетчиков за определенный месяц.
+     *
+     * @param request входящий запрос, содержащий информацию о месяце и пользователе.
+     * @return Ответ, содержащий результат операции просмотра значений счетчиков и его состояние (статус).
+     */
     @Override
     public Response execute(Request request) {
         try {

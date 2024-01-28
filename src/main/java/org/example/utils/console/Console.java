@@ -1,5 +1,8 @@
 package org.example.utils.console;
 
+/**
+ * Реализация интерфейса Printable, предоставляющая методы для общения с консолью.
+ */
 public class Console implements Printable {
 
     private static final String BORDER = "--------------------------------------------------";

@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import org.example.commands.abstracts.Status;
 import org.example.exceptions.ExitObligedException;
 import org.example.exceptions.NoSuchCommandException;
-import org.example.exceptions.NoSuchRoleException;
 import org.example.model.User;
 import org.example.services.AuthService;
 import org.example.services.RuntimeService;
@@ -12,6 +11,9 @@ import org.example.utils.console.Console;
 import org.example.utils.input.UserInput;
 import org.example.utils.logger.Logger;
 
+/**
+ * Класс ApplicationController отвечает за управление потоком приложения.
+ */
 @AllArgsConstructor
 public class ApplicationController implements Controller {
 
@@ -19,7 +21,12 @@ public class ApplicationController implements Controller {
     private AuthService authService;
     private RuntimeService runtimeService;
 
-    public User run(UserInput in) {
+    /**
+     * Запускает приложение на основе предоставленного пользовательского ввода.
+     *
+     * @param in пользовательский ввод
+     */
+    public void run(UserInput in) {
         User authUser;
         while (true) {
             while (true) {
@@ -27,18 +34,21 @@ public class ApplicationController implements Controller {
                     authUser = authService.run(in);
                     break;
                 } catch (NoSuchCommandException exception) {
-                    console.printError("Неверно введенная команда");
+                    console.printError("Введена неверная команда");
                 }
             }
             while (true) {
                 try {
                     runtimeService.run(in, authUser);
                 } catch (NoSuchCommandException exception) {
-                    console.printError("Неверно введенная команда");
+                    console.printError("Введена неверная команда");
                 } catch (ExitObligedException exception) {
                     Logger.addLog(
-                            Logger.createLogString(authUser.getCredential().getLogin(), "exit", Status.OK)
-                    );
+                            Logger.createLogFormatString(
+                                    authUser.getCredential().getLogin(),
+                                    "exit",
+                                    Status.OK));
+
                     console.println("До свидания!");
                     break;
                 }
@@ -46,4 +56,3 @@ public class ApplicationController implements Controller {
         }
     }
 }
-
