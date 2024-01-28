@@ -1,6 +1,7 @@
 package org.example.controllers;
 
 import lombok.AllArgsConstructor;
+import org.example.commands.abstracts.Status;
 import org.example.exceptions.ExitObligedException;
 import org.example.exceptions.NoSuchCommandException;
 import org.example.exceptions.NoSuchRoleException;
@@ -9,6 +10,7 @@ import org.example.services.AuthService;
 import org.example.services.RuntimeService;
 import org.example.utils.console.Console;
 import org.example.utils.input.UserInput;
+import org.example.utils.logger.Logger;
 
 @AllArgsConstructor
 public class ApplicationController implements Controller {
@@ -34,6 +36,9 @@ public class ApplicationController implements Controller {
                 } catch (NoSuchCommandException exception) {
                     console.printError("Неверно введенная команда");
                 } catch (ExitObligedException exception) {
+                    Logger.addLog(
+                            Logger.createLogString(authUser.getCredential().getLogin(), "exit", Status.OK)
+                    );
                     console.println("До свидания!");
                     break;
                 }

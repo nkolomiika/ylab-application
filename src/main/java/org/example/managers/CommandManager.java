@@ -4,6 +4,7 @@ import org.example.commands.abstracts.Command;
 import org.example.dto.Request;
 import org.example.dto.Response;
 import org.example.exceptions.NoSuchCommandException;
+import org.example.exceptions.NoSuchUserException;
 import org.example.model.data.Role;
 import org.example.utils.console.Console;
 

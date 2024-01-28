@@ -12,8 +12,10 @@ import org.example.exceptions.NoSuchUserException;
 import org.example.managers.CommandManager;
 import org.example.managers.UserManager;
 import org.example.model.User;
+import org.example.model.data.Role;
 import org.example.utils.console.Console;
 import org.example.utils.input.UserInput;
+import org.example.utils.logger.Logger;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -45,16 +47,27 @@ public class AuthService {
                 String command = in.nextLine().trim().toLowerCase();
 
                 if (!command.equals("")) {
+
                     response = commandManager.executeCommand(new Request(command));
                     if (response.getStatus().equals(Status.ERROR)) console.printError(response.getMessage());
                     else console.println(response.getMessage());
-                    console.printBorder();
-                    if (response.getUser() != null)
-                        return response.getUser();
+
+                    if (response.getUser() == null) {
+                        console.printBorder();
+                        Logger.addLog(
+                                Logger.createLogString(Role.NON_AUTH.toString(), command, response.getStatus())
+                        );
+                    }
+
+                    if (response.getUser() != null) {
+                        var user = response.getUser();
+                        Logger.addLog(
+                                Logger.createLogString(user.getCredential().getLogin(), command, response.getStatus())
+                        );
+                        return user;
+                    }
                 }
             } catch (IllegalArgumentException | NoSuchElementException ignored) {
-            } catch (NoSuchUserException exception) {
-                console.printError("Неверный логин или пароль");
             }
         }
     }

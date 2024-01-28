@@ -3,10 +3,7 @@ package org.example.services.runners;
 import org.example.commands.abstracts.Status;
 import org.example.commands.avaliable.Exit;
 import org.example.commands.avaliable.Help;
-import org.example.commands.avaliable.admin.BoostUser;
-import org.example.commands.avaliable.admin.CreateIndication;
-import org.example.commands.avaliable.admin.InfoAboutUsers;
-import org.example.commands.avaliable.admin.SearchUser;
+import org.example.commands.avaliable.admin.*;
 import org.example.commands.avaliable.user.AddIndications;
 import org.example.commands.avaliable.user.CheckIndications;
 import org.example.commands.avaliable.user.GetActualIndications;
@@ -23,6 +20,7 @@ import org.example.model.User;
 import org.example.model.data.Role;
 import org.example.utils.console.Console;
 import org.example.utils.input.UserInput;
+import org.example.utils.logger.Logger;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -48,7 +46,8 @@ public class InteractiveModeRunner implements Runner {
                         new GetActualIndications(indicationsManager),
                         new AddIndications(indicationsManager),
                         new CheckIndications(indicationsManager),
-                        new History(indicationsManager)
+                        new History(indicationsManager),
+                        new LoggerCommand()
                 )
         );
         this.commandManager.addCommand(new Help(this.commandManager));
@@ -80,6 +79,8 @@ public class InteractiveModeRunner implements Runner {
                     if (status.equals(Status.EXIT)) throw new ExitObligedException();
                     if (status.equals(Status.ERROR)) console.printError(response.getMessage());
                     else console.println(response.getMessage());
+
+                    Logger.addLog(Logger.createLogString(user.getCredential().getLogin(), command, response.getStatus()));
 
                     console.printBorder();
                 }
