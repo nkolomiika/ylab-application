@@ -4,47 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7d62c40-897c-4e8f-8db3-63d4243a720e" name="Changes" comment="add logger">
+    <list default="true" id="e7d62c40-897c-4e8f-8db3-63d4243a720e" name="Changes" comment="add javadoc">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/liquibase.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/abstracts/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/abstracts/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/abstracts/Executable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/abstracts/Executable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/abstracts/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/abstracts/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/Exit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/Help.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/BoostUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/BoostUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/CreateIndication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/CreateIndication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/InfoAboutUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/InfoAboutUsers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/LoggerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/LoggerCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/SearchUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/admin/SearchUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/auth/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/auth/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/auth/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/auth/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/AddIndications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/AddIndications.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/CheckIndications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/CheckIndications.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/GetActualIndications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/GetActualIndications.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/avaliable/user/History.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/ApplicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dto/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dto/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dto/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dto/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/managers/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/managers/CommandManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/managers/IndicationsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/managers/IndicationsManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/managers/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/managers/UserManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/data/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/data/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/data/Credential.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/data/Credential.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/data/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/data/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/data/SNP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/data/SNP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/RuntimeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/RuntimeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/runners/InteractiveModeRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/runners/InteractiveModeRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/runners/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/runners/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utils/console/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/console/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utils/console/Printable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/console/Printable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utils/forms/IndicationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/forms/IndicationForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utils/forms/UserDataForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/forms/UserDataForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utils/input/ConsoleInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/input/ConsoleInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utils/input/UserInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/input/UserInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utils/logger/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/logger/Logger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -70,6 +37,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="ProjectId" id="2bVHHoRc5OGRHuAeRfLatt5Rd6m" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -78,16 +46,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/mad_duck/Documents/GitHub/ylab/console-application",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mad_duck/Documents/GitHub/ylab/console-application&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example.exceptions" />
@@ -131,7 +99,10 @@
       <workItem from="1706293248674" duration="8154000" />
       <workItem from="1706310884530" duration="12461000" />
       <workItem from="1706375533559" duration="27794000" />
-      <workItem from="1706406777720" duration="29993000" />
+      <workItem from="1706406777720" duration="30938000" />
+      <workItem from="1706529241451" duration="3287000" />
+      <workItem from="1706974171636" duration="2984000" />
+      <workItem from="1707243875188" duration="1797000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1706459243083</created>
@@ -154,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706471101505</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add javadoc">
+      <created>1706474666599</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706474666599</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +153,8 @@
     <MESSAGE value="init commit" />
     <MESSAGE value="refactor project archetype" />
     <MESSAGE value="add logger" />
-    <option name="LAST_COMMIT_MESSAGE" value="add logger" />
+    <MESSAGE value="add javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="add javadoc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -234,6 +213,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/services/runners/InteractiveModeRunner.java</url>
           <line>69</line>
           <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/managers/CommandManager.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/services/runners/InteractiveModeRunner.java</url>

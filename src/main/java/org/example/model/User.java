@@ -37,7 +37,7 @@ public class User {
         return credential.getLogin() + " -> \n" +
                 "   Фамилия : " + snp.getSurname() +
                 "\n   Имя : " + snp.getName() +
-                "\n   Отчество : " + snp.getSurname() +
+                "\n   Отчество : " + snp.getPatronymic() +
                 "\n   Город : " + address.getCity() +
                 "\n   Улица : " + address.getStreet() +
                 "\n   Дом : " + address.getHouse() +

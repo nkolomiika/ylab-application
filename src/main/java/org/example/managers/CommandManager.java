@@ -57,9 +57,20 @@ public class CommandManager {
      */
     public Response executeCommand(Request request) {
         String command = request.getCommand();
-        if (this.commands.containsKey(command))
-            return commands.get(command).execute(request);
-        throw new NoSuchCommandException();
+        if (this.commands.containsKey(command)) {
+            var exec = commands.get(command);
+            var execRole = exec.getRole();
+            if (execRole.equals(Role.ALL)
+                    || execRole.equals(Role.NON_AUTH))
+                return exec.execute(request);
+
+            if (exec.getRole().equals(request.getUser().getSessionRole()))
+                return exec.execute(request);
+
+        }
+        throw new
+                NoSuchCommandException();
+
     }
 
     /**

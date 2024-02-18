@@ -23,7 +23,7 @@ public class Logger {
      * @return все логи в виде строки
      */
     public static String getAllLogs() {
-        return logs.reverse().replace(0,1, "").reverse().toString();
+        return logs.toString();
     }
 
     /**
